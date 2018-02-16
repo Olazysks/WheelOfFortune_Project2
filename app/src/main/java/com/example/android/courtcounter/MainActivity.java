@@ -1,20 +1,17 @@
 package com.example.android.courtcounter;
 
-import android.os.PersistableBundle;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
     int scorePlayer1 = 0;
     int scorePlayer2 = 0;
-    int scorePlayer3 = 0;
     int prizeNoPlayer1 = 0;
     int prizeNoPlayer2 = 0;
     TextView player_1_score;
     TextView player_2_score;
-    TextView player_3_score;
     TextView player_1_NoOfPrizes;
     TextView player_2_NoOfPrizes;
 
@@ -39,17 +36,15 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    /*
+    /**
      * Action taken on save and possible to be read out from Bundle after changing orientation or language etc.
      * Reading out is done in onCreate method.
      */
-
     @Override
     protected void onSaveInstanceState(Bundle outState) {
         super.onSaveInstanceState(outState);
         outState.putInt("scorePlayer1", scorePlayer1);
         outState.putInt("scorePlayer2", scorePlayer2);
-        outState.putInt("scorePlayer3", scorePlayer3);
         outState.putInt("prizeNoPlayer1", prizeNoPlayer1);
         outState.putInt("prizeNoPlayer2", prizeNoPlayer2);
     }
@@ -168,7 +163,6 @@ public class MainActivity extends AppCompatActivity {
     public void reset(View v) {
         scorePlayer1 = 0;
         scorePlayer2 = 0;
-        scorePlayer3 = 0;
         prizeNoPlayer1 = 0;
         prizeNoPlayer2 = 0;
         displayForPlayer1(scorePlayer1);
